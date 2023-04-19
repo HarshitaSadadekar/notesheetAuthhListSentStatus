@@ -67,9 +67,9 @@ class Sent extends React.Component{
       { note.status == 1 &&
             <td><small className='badge badge-success'>Approved</small></td>
         }
-        {/* { note.status == 0 &&
+        { note.status == 0 &&
             <td><small className='badge badge-success'>Pending</small></td>
-        } */}
+        }
         
         {note.status == -1 &&
             <td><small className='badge badge-danger'>Rejected</small></td>
