@@ -64,18 +64,21 @@ class Sent extends React.Component{
 
 
 
-        <td className='text-right'>
-            <button className='button muted-button'>Approve</button>
-        </td>
-        <td className='text-center'>
-            <button className='button muted-button'>Reject</button>
-        </td>
-        <td className='text-center'>
-            <button className='button muted-button'>Review</button>
-        </td>
-        <td className='text-left'>
-            <button className='button muted-button'>Forward</button>
-        </td>
+      { note.status == 1 &&
+            <td><small className='badge badge-success'>Approved</small></td>
+        }
+        
+        {note.status == -1 &&
+            <td><small className='badge badge-danger'>Rejected</small></td>
+}
+
+{ note.status == 2 &&
+            <td><small className='badge badge-success'>Review</small></td>
+        }
+        
+        {note.status == 3 &&
+            <td><small className='badge badge-danger'>Forward</small></td>
+   }
     </tr>
            
         );
