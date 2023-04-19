@@ -145,7 +145,7 @@ class List extends React.Component{
           
         );
 
-        const rows=noteSheet.filter((note)=>note.department===l).map((note,i)=>
+        const rows=noteSheet.filter((note)=>note.department===l && !note.status==1).map((note,i)=>
         
         <tr key={note.f_id}>
         <td>{note.f_id}</td>
@@ -159,16 +159,16 @@ class List extends React.Component{
 
         <td className='text-right'>
             
-            <button onClick={() => this.handleApprove(note.url.slice(32,33))} className='button muted-button'>Approve</button>
+            <button onClick={() => this.handleApprove(note.url.slice(32,34).replace('/','').trim())} className='button muted-button'>Approve</button>
         </td>
         <td className='text-center'>
-            <button  onClick={() => this.handleRej(note.url.slice(32,33))}  className='button muted-button'>Reject</button>
+            <button  onClick={() => this.handleRej(note.url.slice(32,34).replace('/','').trim())}  className='button muted-button'>Reject</button>
         </td>
         <td className='text-center'>
-            <button onClick={() => this.handleRew(note.url.slice(32,33))} className='button muted-button'>Review</button>
+            <button onClick={() => this.handleRew(note.url.slice(32,34).replace('/','').trim())} className='button muted-button'>Review</button>
         </td>
         <td className='text-left'>
-            <button onClick={() => this.handleFow(note.url.slice(32,33))} className='button muted-button'>Forward</button>
+            <button onClick={() => this.handleFow(note.url.slice(32,34).replace('/','').trim())} className='button muted-button'>Forward</button>
         </td>
     </tr>
             // <tr key={emp.id}>
@@ -190,7 +190,7 @@ class List extends React.Component{
                         <tr>
                         <th>No.</th>
                         <th>Notesheet</th>
-                        <th>NoteSheet Came From Which Email</th>
+                        <th>Sender</th>
                         <th>Date</th>
                         <th colSpan={2} className='text-center'>Actions</th>
                         </tr>

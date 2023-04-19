@@ -174,7 +174,7 @@ function Create({ faculty, setFaculty, setIsCreating }){
                     <input id='details' name='proposal_submitted_by' value={pro_sub} onChange={f => set_prosub(f.target.value)} type="text" placeholder="proposal_submitted_by" />
                 </div>
                 <div class="input-box">
-                    <label htmlFor='details'>YourEmail</label>
+                    <label htmlFor='details'>Sender's Email</label>
                     <input id='details' name='proposal_submitted_by' value={pro_sub1} onChange={f => set_prosub1(f.target.value)} type="text" placeholder="YourEmail" />
                 </div>
 

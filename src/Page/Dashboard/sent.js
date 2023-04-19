@@ -67,6 +67,9 @@ class Sent extends React.Component{
       { note.status == 1 &&
             <td><small className='badge badge-success'>Approved</small></td>
         }
+        {/* { note.status == 0 &&
+            <td><small className='badge badge-success'>Pending</small></td>
+        } */}
         
         {note.status == -1 &&
             <td><small className='badge badge-danger'>Rejected</small></td>
@@ -78,7 +81,7 @@ class Sent extends React.Component{
         
         {note.status == 3 &&
             <td><small className='badge badge-danger'>Forward</small></td>
-   }
+  }
     </tr>
            
         );
@@ -90,9 +93,9 @@ class Sent extends React.Component{
                         <tr>
                         <th>No.</th>
                         <th>Notesheet</th>
-                        <th>Notesheet Sent to Which Email</th>
+                        <th>Receiver</th>
                         <th>Date</th>
-                        <th colSpan={2} className='text-center'>Actions</th>
+                        <th colSpan={2} className='text-center'>Status</th>
                         </tr>
                     </thead>
                     <tbody>
