@@ -54,7 +54,7 @@ class Sent extends React.Component{
         );
 
         const rows=noteSheet.filter((note)=>note.proposal_submitted_by_1===l).map((note,i)=>
-        <tr key={note.f_id}>
+        <tr key={note.ppk}>
         <td>{note.id}</td>
         <td>{note.subject}</td>  
         {/* <td>{rows2[i]}</td>    */}

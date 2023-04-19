@@ -46,8 +46,91 @@ class List extends React.Component{
     //     };
     // }
 
+   
+    handleApprove(notesheetId) {
+        console.log(notesheetId)
+        fetch(`http://127.0.0.1:8000/notesheet/${notesheetId}/status/`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status: 1 
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
 
 
+    handleRej(notesheetId) {
+        console.log(notesheetId)
+        fetch(`http://127.0.0.1:8000/notesheet/${notesheetId}/status/`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status: -1 
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+          
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+
+    handleRew(notesheetId) {
+        console.log(notesheetId)
+        fetch(`http://127.0.0.1:8000/notesheet/${notesheetId}/status/`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status: 2 
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+          
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
+
+    handleFow(notesheetId) {
+        console.log(notesheetId)
+        fetch(`http://127.0.0.1:8000/notesheet/${notesheetId}/status/`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                status: 3 
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+          
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    }
    
     render(){
      
@@ -63,27 +146,29 @@ class List extends React.Component{
         );
 
         const rows=noteSheet.filter((note)=>note.department===l).map((note,i)=>
+        
         <tr key={note.f_id}>
-        <td>{note.id}</td>
+        <td>{note.f_id}</td>
         <td>{note.subject}</td>  
         {/* <td>{rows2[i]}</td>    */}
         <td>  {note.proposal_submitted_by_1}</td>
       <td>  {note.date_of_creation}</td>
 
 
-
+        {/* console.log(note.id) */}
 
         <td className='text-right'>
-            <button className='button muted-button'>Approve</button>
+            
+            <button onClick={() => this.handleApprove(note.url.slice(32,33))} className='button muted-button'>Approve</button>
         </td>
         <td className='text-center'>
-            <button className='button muted-button'>Reject</button>
+            <button  onClick={() => this.handleRej(note.url.slice(32,33))}  className='button muted-button'>Reject</button>
         </td>
         <td className='text-center'>
-            <button className='button muted-button'>Review</button>
+            <button onClick={() => this.handleRew(note.url.slice(32,33))} className='button muted-button'>Review</button>
         </td>
         <td className='text-left'>
-            <button className='button muted-button'>Forward</button>
+            <button onClick={() => this.handleFow(note.url.slice(32,33))} className='button muted-button'>Forward</button>
         </td>
     </tr>
             // <tr key={emp.id}>

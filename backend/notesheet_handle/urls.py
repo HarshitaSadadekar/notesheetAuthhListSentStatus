@@ -10,6 +10,7 @@ router.register(r'notesheet', views.NoteSheetViewSet,basename='notesheet')
 urlpatterns = [
     path('', include(router.urls)),
     path('current_user/', get_faculty_profile),
-    path('users/create', CreateUserView.as_view())
+    path('users/create', CreateUserView.as_view()),
+    path('notesheet/<int:pk>/status/', UpdateNoteSheetStatus.as_view()),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

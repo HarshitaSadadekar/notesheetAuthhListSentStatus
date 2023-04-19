@@ -22,6 +22,7 @@ class FacultyDetails(models.Model):
 
 
 class NoteSheet(models.Model):
+    # ppk = models.IntegerField(primary_key=True)
     date_of_creation = models.DateTimeField(auto_now_add=True)
     # date = models.DateTimeField(format='%d-%m-%Y %H:%M', auto_now_add=True)
     subject = models.TextField()
@@ -34,4 +35,4 @@ class NoteSheet(models.Model):
     proposal_submitted_by_1 = models.CharField(max_length=255)
     receiver_1 = models.CharField(max_length=255)
     receiver_2 = models.CharField(max_length=255)
-    Status = models.IntegerField(default='000')
+    status = models.IntegerField(default=0)

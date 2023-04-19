@@ -7,7 +7,9 @@ from rest_framework.settings import api_settings
 
 
 class NoteSheetSerializer(serializers.HyperlinkedModelSerializer):
+    
     class Meta:
+        key = serializers.IntegerField(read_only=True)
         model = NoteSheet
         fields = ('__all__')
 

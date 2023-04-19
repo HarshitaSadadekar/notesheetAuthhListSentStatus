@@ -9,9 +9,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.views import TokenObtainPairView
 from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect, get_object_or_404
 
 from .searializers import *
-
+from rest_framework.decorators import action
 # User = get_user_model()
 from users.models import User
 
@@ -40,6 +41,18 @@ class NoteSheetViewSet(viewsets.ModelViewSet):
 
         queryset = NoteSheet.objects.all()
         return queryset
+    
+    
+    
+class UpdateNoteSheetStatus(APIView):
+    def put(self, request, pk):
+        notesheet = get_object_or_404(NoteSheet, pk=pk)
+        notesheet.status = request.data['status']
+        notesheet.save()
+        serializer = NoteSheetSerializer(notesheet)
+        return Response(serializer.data)  
+    
+      
         
 
 
