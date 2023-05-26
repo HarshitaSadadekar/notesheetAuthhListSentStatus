@@ -66,6 +66,22 @@ button:focus{
 div{
     display:block;
 }
+.badge-success{
+    background-color: #3fc338;
+    color: #000;
+}
+.badge-warning{
+    background-color: #e6e68b;
+    color: #000;
+}
+.badge-danger{
+    background-color: #ec4d4dc0;
+    color: #000;
+}
+.badge-primary{
+    background-color: #538af0;
+    color: #000;
+}
 
 @media(max-width:1000px){
     .container{

@@ -1,6 +1,7 @@
 import React from 'react'
 import './table.css'
 
+
 import {l}  from '../../pages/Loginn';
 
 
@@ -68,7 +69,7 @@ class Sent extends React.Component{
             <td><small className='badge badge-success'>Approved</small></td>
         }
         { note.status == 0 &&
-            <td><small className='badge badge-success'>Pending</small></td>
+            <td><small className='badge badge-warning'>Pending</small></td>
         }
         
         {note.status == -1 &&
@@ -76,11 +77,11 @@ class Sent extends React.Component{
 }
 
 { note.status == 2 &&
-            <td><small className='badge badge-success'>Review</small></td>
+            <td><small className='badge badge-primary'>Review</small></td>
         }
         
         {note.status == 3 &&
-            <td><small className='badge badge-danger'>Forward</small></td>
+            <td><small className='badge badge-primary'>Forward</small></td>
   }
     </tr>
            

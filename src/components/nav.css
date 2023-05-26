@@ -1,0 +1,11 @@
+.navbar{
+    background-color: #ca4b0b !important; 
+}
+.navbar .container-fluid .navbar-nav .nav-item .nav-link{
+    color: #000 !important;
+    text-decoration: none;
+}
+.navbar .container-fluid .navbar-brand{
+    color: #000 !important;
+    text-decoration: none;
+}

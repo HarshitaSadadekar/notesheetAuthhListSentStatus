@@ -17,22 +17,6 @@ import Home from "./pages/Home";
 import Register from "./pages/Register";
 
 function App() {
-    // var [name, setName] = useState('');
-
-    // useEffect(() => {
-    //     (
-    //         async () => {
-    //             const response = await fetch('http://localhost:8000/api/user', {
-    //                 headers: {'Content-Type': 'application/json'},
-    //                 credentials: 'include',
-    //             });
-
-    //             const content = await response.json();
-    //             console.log(content.name);
-    //             setName(content.name);
-    //         }
-    //     )();
-    // });
          
     const[name , setName] = useState('');
 
@@ -58,24 +42,6 @@ function App() {
 
     return (
         <div className="App">
-         
-      
-        {/* <Router>
-
-
-
-        <Nav/>
-
-        
-        <main classname="form-signin w-100 m-auto">
-        <Routes>
-            
-        <Route  path='/' exact element={<Home />} />
-        <Route path='/login' element={<Loginn />} />
-        <Route path='/register' element={<Register/>} />
-        </Routes>
-        </main>
-        </Router> */}
      
     <main classname="form-signin w-100 m-auto">
       <Router>
